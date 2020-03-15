@@ -5,7 +5,7 @@ services:
     image: mysql:8.0.19
     container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: 2525life
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: apl
       MYSQL_USER: db_user
       MYSQL_PASSWORD: db_user
@@ -16,13 +16,18 @@ services:
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./db/sql:/docker-entrypoint-initdb.d
     ports:
-      - "13306:3306"
+      - "3306:3306"
 
   ubuntu:
+    container_name: ubuntu
     build: ./ubuntu
     volumes:
       - ./ubuntu/src:/var/www/laravel
+      - ./ubuntu/composer:/root/.composer
     working_dir: /var/www/laravel
     ports:
-      - "10080:80"
+      - "80:80"
 
+  redis:
+    image: redis:5.0.8
+    container_name: redis
