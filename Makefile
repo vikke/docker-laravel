@@ -1,5 +1,5 @@
 build:
-	docker build -t my_ubuntu:latest ubuntu
+	docker build -t my_ubuntu ubuntu
 down:
 	docker-compose down
 kill_container:
