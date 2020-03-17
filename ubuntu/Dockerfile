@@ -13,6 +13,7 @@ RUN apt update && \
 	vim unzip zip less php-composer-ca-bundle silversearcher-ag git
 	# libzip-dev autoconf libfreetype6-dev libjpeg-turbo8-dev libpng-dev zip unzip git
 RUN a2enmod rewrite
+RUN a2enmod vhost_alias
 
 #RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 #    && docker-php-ext-install -j$(nproc) gd mysqli pdo_mysql bcmath
