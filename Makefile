@@ -15,3 +15,5 @@ clean_container:
 clean_all: kill_container clean_container clean_image
 login:
 	docker-compose exec ubuntu bash
+ps:
+	docker-compose ps

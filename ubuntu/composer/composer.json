@@ -1,7 +1,0 @@
-{
-    "require": {
-        "laravel/framework": "6.x-dev",
-        "laravel/laravel": "6.x-dev",
-        "laravel/installer": "^3.0"
-    }
-}
